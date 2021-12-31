@@ -1,10 +1,50 @@
-@import url('http://fonts.cdnfonts.com/css/sweet-leaf');
+@font-face {
+    font-family: 'Fira Code';
+    src: url('woff2/FiraCode-Light.woff2') format('woff2'),
+        url("woff/FiraCode-Light.woff") format("woff");
+    font-weight: 300;
+    font-style: normal;
+}
 
 @font-face {
-    font-family: 'FuturaHandwritten Medium';
+    font-family: 'Fira Code';
+    src: url('woff2/FiraCode-Regular.woff2') format('woff2'),
+        url("woff/FiraCode-Regular.woff") format("woff");
+    font-weight: 400;
     font-style: normal;
-    font-weight: normal;
-    src: local('FuturaHandwritten Medium'), url('/fonts/FuturaHandwritten.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Fira Code';
+    src: url('woff2/FiraCode-Medium.woff2') format('woff2'),
+        url("woff/FiraCode-Medium.woff") format("woff");
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Fira Code';
+    src: url('woff2/FiraCode-SemiBold.woff2') format('woff2'),
+        url("woff/FiraCode-SemiBold.woff") format("woff");
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Fira Code';
+    src: url('woff2/FiraCode-Bold.woff2') format('woff2'),
+        url("woff/FiraCode-Bold.woff") format("woff");
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Fira Code VF';
+    src: url('woff2/FiraCode-VF.woff2') format('woff2-variations'),
+        url('woff/FiraCode-VF.woff') format('woff-variations');
+    /* font-weight requires a range: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Fonts/Variable_Fonts_Guide#Using_a_variable_font_font-face_changes */
+    font-weight: 300 700;
+    font-style: normal;
 }
 
 * {
@@ -46,6 +86,11 @@ body {
     margin: 0 auto;
     background-position: center;
     background-size: cover;
+    align-items: center;
+    padding-top: 27px;
+    font-size: 22px;
+    font-family: 'Fira Code', sans-serif;
+    color: #FF0000;
 }
 
 .logo.hide {
@@ -63,7 +108,7 @@ body {
     width: 170px;
     position: absolute;
     border: none;
-    font-family: 'FuturaHandwritten Medium', sans-serif;
+    font-family: 'Fira Code', sans-serif;
     cursor: pointer;
     transition: width 750ms, right 750ms, top 750ms cubic-bezier(0.175, 0.885, 0.32, 1.1), font-size 750ms, transform 750ms, box-shadow 750ms;
     box-shadow: 0 10px 20px -10px #f72f50;
@@ -94,9 +139,9 @@ body {
 .menu-content .menu-button {
     color: #FFF;
     display: inline-block;
-    font-family: 'FuturaHandwritten Medium', sans-serif;
+    font-family: 'Fira Code', sans-serif;
     padding: 10px 20px;
-    font-size: 20px;
+    font-size: 17px;
     cursor: pointer;
 }
 
@@ -141,9 +186,11 @@ body {
     margin-left: 14px;
     margin-top: 25px;
 }
+
 .menu-phone-button.back .line:nth-child(2) {
     opacity: 0;
 }
+
 .menu-phone-button.back .line:last-child {
     transform: rotate(-45deg);
     margin-left: -14px;
@@ -160,7 +207,7 @@ body {
     display: inline-block;
     padding: 10px 100px;
     font-size: 40px;
-    font-family: 'SweetLeaf', sans-serif;
+    font-family: 'Fira Code', sans-serif;
     color: #FFF;
     position: relative;
     background-color: #000;
@@ -170,7 +217,14 @@ body {
 }
 
 .purchase-button:hover {
-    color: #00FF99;
+    color: #FF0000;
+}
+
+.roadmap {
+    background-image: url(/images/roadmap.gif);
+    background-size: cover;
+    height: 40vmin;
+    width: 40vmin;
 }
 
 .documents {
@@ -188,11 +242,11 @@ body {
     color: #FFF;
     text-align: center;
     font-size: 20px;
-    font-family: 'FuturaHandwritten Medium', sans-serif;
+    font-family: 'Fira Code', sans-serif;
 }
 
 .documents .content {
-    height: 50%;
+    height: 70%;
     overflow-x: hidden;
 }
 
@@ -203,16 +257,18 @@ body {
     left: 0;
     right: 0;
     font-size: 12px;
-    font-family: 'FuturaHandwritten Medium', sans-serif;
+    font-family: 'Fira Code', sans-serif;
 }
 
 @keyframes swipeDown {
     0% {
         margin-top: -180px;
     }
+
     50% {
         margin-top: 20px;
     }
+
     100% {
         margin-top: 0;
     }
@@ -230,9 +286,11 @@ body {
         height: 68px;
         margin: 12px;
     }
+
     .menu-phone-button {
         display: block;
     }
+
     .menu-phone-button .line {
         margin: 10px 0;
         height: 1px;
@@ -240,6 +298,7 @@ body {
         background-color: #FFF;
         transition: transform .5s, opacity .5s, margin .5s;
     }
+
     .menu-content {
         display: none;
         justify-content: space-evenly;
@@ -255,14 +314,17 @@ body {
         background-color: #000000F2;
         box-shadow: 0 -50px 0 #000000F2;
     }
+
     .menu-content .menu-button {
         padding: 25px;
         width: 100%;
         margin: 0;
     }
+
     .menu-content .menu-button .label {
         display: inline-block;
     }
+
     .highlight-btn {
         font-size: 13px;
         right: 70px;
@@ -270,10 +332,12 @@ body {
         width: 85px;
         top: 15%;
     }
+
     .highlight-btn:not(.title):hover {
         top: 13%;
         box-shadow: 0 10px 30px -10px #f72f50;
     }
+
     .documents {
         font-size: 13px;
     }
