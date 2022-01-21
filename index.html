@@ -108,7 +108,7 @@
         HTMLElement.prototype.fadeIn = function (duration = 300, display) {
             let s = this.style;
             s.opacity = s.opacity || 0;
-            s.display = 'inline-block' || display;
+            s.display = display || 'inline-block';
             (function fade() {
                 (s.opacity = parseFloat(s.opacity) + (25 / duration)) > 1 ? s.opacity = 1 : setTimeout(fade,
                     25);
@@ -139,6 +139,7 @@
         const menuContent = document.querySelector('.menu-content');
         const menuButton = document.querySelector('.menu-phone-button');
         const topNavbar = document.querySelector('.top');
+        const mainDiv = document.querySelector('.main');
         const purchaseButton = document.querySelector('.purchase-button');
 
         function closeDocuments() {
@@ -147,6 +148,7 @@
             documentsBtn.classList.remove('title');
             documentsBtn.style.removeProperty('top');
             menuButton.classList.remove('back');
+            mainDiv.fadeIn(500, 'block');
             purchaseButton.fadeIn(500);
         }
 
@@ -155,11 +157,13 @@
             topNavbar.style.top = 0;
             documentsBtn.fadeIn(500)
             menuButton.classList.remove('back');
+            mainDiv.fadeIn(500, 'block');
             purchaseButton.fadeIn(500);
         }
 
         documentsBtn.addEventListener('click', () => {
             if (!documentsBtn.classList.contains('title')) {
+                mainDiv.fadeOut(500);
                 purchaseButton.fadeOut(500);
 
                 documentsDiv.style.display = 'flex';
@@ -183,6 +187,7 @@
             } else {
                 document.body.appendChild(menuContent);
 
+                mainDiv.fadeOut(500);
                 purchaseButton.fadeOut(500);
                 documentsBtn.fadeOut(500);
 
