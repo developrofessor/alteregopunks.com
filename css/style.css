@@ -72,9 +72,10 @@ body {
 }
 
 .top {
-    background-image: url(/images/top.png);
+    background-color: #000D;
     width: 100%;
-    height: 180px;
+    /* height: 80px; */
+    /* padding: px; */
     top: 0;
     left: 0;
     position: absolute;
@@ -82,6 +83,9 @@ body {
     animation: swipeDown 750ms ease-out;
     transition: all 750ms cubic-bezier(0.175, 0.885, 0.32, 1.1);
     z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    
 }
 
 .logo {
@@ -103,21 +107,21 @@ body {
 }
 
 .highlight-btn {
-    background-image: linear-gradient(45deg, #ffc35a, #f72f50);
+    /* background-image: linear-gradient(45deg, #ffc35a, #f72f50); */
+    background-color: #FFF;
     border-radius: 100px;
     padding: 8px 0;
-    color: #FFF;
+    color: #000;
     font-size: 20px;
     top: 11%;
     right: 30px;
     width: 170px;
-    position: absolute;
     border: none;
     font-family: 'Fira Code', sans-serif;
     cursor: pointer;
     transition: width 750ms, right 750ms, top 750ms cubic-bezier(0.175, 0.885, 0.32, 1.1), font-size 750ms, transform 750ms, box-shadow 750ms;
-    box-shadow: 0 10px 20px -10px #f72f50;
     z-index: 2;
+    margin: 0 5px;
 }
 
 .highlight-btn:not(.title):hover {
@@ -137,21 +141,31 @@ body {
 }
 
 .menu-content {
-    float: left;
-    margin: 20px 10px;
+    margin: 15px 10px;
 }
 
 .menu-content .menu-button {
-    color: #FFF;
+    color: #000;
     display: inline-block;
     font-family: 'Fira Code', sans-serif;
     padding: 10px 20px;
     font-size: 17px;
     cursor: pointer;
+    background-color: #FFF;
+    border-radius: 100px;
+    margin: 0 5px;
 }
 
 .menu-content .menu-button:hover {
     text-decoration: underline;
+}
+
+.menu-content .menu-button.purchase {
+    background-color: #FF0000 !important;
+    /* box-shadow: */
+    box-shadow: 0 10px 20px -10px #FF0000;
+    transform: scale(1.5);
+    color: #FFF;
 }
 
 .menu-content .splitter {
@@ -219,12 +233,69 @@ body {
     background-size: contain;
 }
 
-.purchase-button {
-    top: 30vh;
-    margin: 0 auto;
+.section {
+    height: 100vh;
+    width: 100vw;
+    background-size: 100% 100%;
+    position: relative;
+}
+
+.section .title,
+.back-to-top {
+    border-radius: 100px;
+    font-family: 'Fira Code', sans-serif;
+    background-color: #FFF;
+    padding: 10px 30px;
+    color: #000;
+    font-size: 30px;
+    /* position: absolute; */
     display: inline-block;
-    padding: 10px 100px;
-    font-size: 40px;
+    top: -30px;
+    position: relative;
+}
+
+.back-to-top {
+    position: absolute;
+    bottom: 0px;
+    top: unset;
+    margin: 0px 20px;
+    border-radius: 20px 20px 0 0;
+    left: 0;
+    right: 0;
+    cursor: pointer;
+    font-size: 20px;
+
+}
+
+.section.one {
+    background-image: url(/images/section-a.png);
+}
+
+.section.two {
+    background-image: url(/images/section-b.png);
+}
+
+.section.three {
+    background-image: url(/images/section-c.png);
+}
+
+.section.four {
+    background-image: url(/images/section-d.png);
+}
+
+.section.five {
+    background-image: url(/images/section-e.png);
+}
+
+.section.six {
+    background-image: url(/images/section-f.png);
+}
+
+.purchase-button {
+    margin: 0 5px;
+    display: inline-block;
+    padding: 10px 50px;
+    font-size: 20px;
     font-family: 'Fira Code', sans-serif;
     color: #FFF;
     position: relative;
