@@ -133,6 +133,7 @@
 
         const documentsDiv = document.querySelector('.documents');
         const documentsBtn = document.querySelector('#documentsBtn');
+        const faqBtn = document.querySelector('#faqBtn');
         const backToTopBtn = document.querySelector('.back-to-top');
         const menuContent = document.querySelector('.menu-content');
         const menuButton = document.querySelector('.menu-phone-button');
@@ -151,6 +152,10 @@
 
         documentsBtn.addEventListener('click', () => {
             window.scroll(0, document.querySelector('.section.three').offsetTop - 35);
+        });
+
+        faqBtn.addEventListener('click', () => {
+            window.scroll(0, document.querySelector('.section.faq').offsetTop);
         });
 
         menuButton.addEventListener('click', () => {
