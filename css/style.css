@@ -62,10 +62,7 @@ html {
 
 body {
     margin: 0;
-    background-image: url(/images/background.jpg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+    background-color: #000;
     width: 100%;
     height: 100%;
     text-align: center;
@@ -236,11 +233,15 @@ body {
 .section {
     height: 100vh;
     width: 100vw;
-    background-size: 100% 100%;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
     position: relative;
+    font-family: 'Fira Code', sans-serif;
+    text-align: center;
 }
 
-.section .title,
+.section>.title,
 .back-to-top {
     border-radius: 100px;
     font-family: 'Fira Code', sans-serif;
@@ -255,7 +256,7 @@ body {
 }
 
 .back-to-top {
-    position: absolute;
+    position: fixed;
     bottom: 0px;
     top: unset;
     margin: 0px 20px;
@@ -264,7 +265,7 @@ body {
     right: 0;
     cursor: pointer;
     font-size: 20px;
-
+    display: none;
 }
 
 .section.one {
@@ -289,6 +290,89 @@ body {
 
 .section.six {
     background-image: url(/images/section-f.png);
+}
+
+.section.faq {
+    background-image: url(/images/faq.png);
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.section .box {
+    margin: 30px 40px;
+}
+
+.section .box .title {
+    border: 2px solid #FFF;
+    background-color: #FFFA;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.section .box.show .title {
+    border-radius: 5px 5px 0 0;
+}
+
+.section .box .content {
+    background-color: #FFF;
+    border-radius: 0 0 5px 5px;
+    padding: 5px;
+    text-align: center;
+    display: none;
+    transition: all 500ms;
+}
+
+.section .box.show .content {
+    display: block;
+}
+
+.crew {
+    width: 200px;
+    height: 200px;
+    margin: 10px auto;
+    background-size: cover;
+    display: inline-block;
+    border-radius: 10px;
+}
+
+.crew .text {
+    background-color: #000A;
+    color: #FFF;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: all 500ms;
+    border-radius: 10px;
+}
+
+.crew.water {
+    background-image: url(/images/water-crew.png);
+}
+
+.crew.earth {
+    background-image: url(/images/earth-crew.png);
+}
+
+.crew.fire {
+    background-image: url(/images/fire-crew.png);
+}
+
+.crew.air {
+    background-image: url(/images/air-crew.png);
+}
+
+.crew.energy {
+    background-image: url(/images/energy-crew.png);
+}
+
+.crew:hover .text {
+    opacity: 1;
 }
 
 .purchase-button {
@@ -376,19 +460,19 @@ body {
         margin: 12px;
     }
 
-    .menu-phone-button {
+    /* .menu-phone-button {
         display: block;
-    }
+    } */
 
-    .menu-phone-button .line {
+    /* .menu-phone-button .line {
         margin: 10px 0;
         height: 1px;
         width: 40px;
         background-color: #FFF;
         transition: transform .5s, opacity .5s, margin .5s;
-    }
+    } */
 
-    .menu-content {
+    /* .menu-content {
         display: none;
         justify-content: space-evenly;
         align-items: center;
@@ -402,30 +486,32 @@ body {
         padding: 20px;
         background-color: #000000F2;
         box-shadow: 0 -50px 0 #000000F2;
-    }
+    } */
 
-    .menu-content .menu-button {
+    /* .menu-content .menu-button {
         padding: 25px;
         width: 100%;
         margin: 0;
-    }
+    } */
 
-    .menu-content .menu-button .label {
+    /* .menu-content .menu-button .label {
         display: inline-block;
-    }
+    } */
 
-    .highlight-btn {
-        font-size: 13px;
+    .highlight-btn,
+    .menu-button {
+        font-size: 13px !important;
         right: 70px;
-        padding: 5px;
-        width: 85px;
+        padding: 5px 7px !important;
+        max-width: 85px;
+        margin: 3px !important;
         top: 15%;
     }
 
-    .highlight-btn:not(.title):hover {
+    /* .highlight-btn:not(.title):hover {
         top: 13%;
         box-shadow: 0 10px 30px -10px #f72f50;
-    }
+    } */
 
     .documents {
         font-size: 13px;
