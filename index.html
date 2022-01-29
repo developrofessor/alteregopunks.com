@@ -25,8 +25,7 @@
             </a>
         </div>
         <div class="menu-content">
-            <div class="menu-button purchase"
-                onclick="window.open('https://nftrade.com/users/avalanche/0xbfcd59dc4ceae642edf7b513b5b425cf413c9183', '_blank')">
+            <div class="menu-button purchase">
                 MINT
             </div>
         </div>
@@ -38,6 +37,14 @@
         <div class="menu-content">
             <button class="highlight-btn" id="documentsBtn">Roadmap</button>
             <button class="highlight-btn" id="faqBtn">FAQ</button>
+        </div>
+    </div>
+    <div class="section mint" style="display: none; height: 0">
+        <div class="widget nftrade">
+            <button class="btn" onclick="window.open('https://nftrade.com/users/avalanche/0xbfcd59dc4ceae642edf7b513b5b425cf413c9183', '_blank')">View crews for sale</button>
+        </div>
+        <div class="widget tofunft">
+            <button class="btn" onclick="window.open('https://tofunft.com/collection/alter-ego-punks/items', '_blank')">View crews for sale</button>
         </div>
     </div>
     <div class="section one"></div>
@@ -99,6 +106,26 @@
                 </div>
             </div>
         </div>
+        <div class="box">
+            <div class="title">Who runs this project?</div>
+            <div class="content">
+                <p>
+                    <a href='https://twitter.com/E4Echelon'>
+                        <i class="fab fa-twitter"></i> E4Echelon
+                    </a>
+                </p>
+                <p>
+                    <a href='https://twitter.com/AmarjitChowdh13'>
+                        <i class="fab fa-twitter"></i> AmarjitChowdh13
+                    </a>
+                </p>
+                <p>
+                    <a href='https://www.instagram.com/professor.dev/'>
+                        <i class="fab fa-instagram"></i> professor.dev
+                    </a>
+                </p>
+            </div>
+        </div>
         <div class="back-to-top">Back to top</div>
     </div>
     <script>
@@ -139,7 +166,7 @@
         const menuButton = document.querySelector('.menu-phone-button');
         const topNavbar = document.querySelector('.top');
         const mainDiv = document.querySelector('.main');
-        const purchaseButton = document.querySelector('.purchase-button');
+        const purchaseButton = document.querySelector('.purchase');
 
         function closeMenu() {
             menuContent.style.top = (-menuContent.clientHeight) + 'px';
@@ -147,7 +174,6 @@
             documentsBtn.fadeIn(500)
             menuButton.classList.remove('back');
             mainDiv.fadeIn(500, 'block');
-            purchaseButton.fadeIn(500);
         }
 
         documentsBtn.addEventListener('click', () => {
@@ -166,7 +192,6 @@
                 document.body.appendChild(menuContent);
 
                 mainDiv.fadeOut(500);
-                purchaseButton.fadeOut(500);
                 documentsBtn.fadeOut(500);
 
                 menuContent.style.display = 'flex';
@@ -186,10 +211,18 @@
         });
 
         window.addEventListener('scroll', () => {
-            if (window.scrollY > document.querySelector('.section').offsetHeight)
+            if (window.scrollY > document.querySelector('.section.one').offsetHeight)
                 backToTopBtn.style.display = 'block';
             else
                 backToTopBtn.style.display = 'none';
+        });
+
+        purchaseButton.addEventListener('click', () => {
+            const mintSection = document.querySelector('.section.mint');
+            mintSection.style.removeProperty('display');
+            setInterval(() => {
+                mintSection.style.removeProperty('height');
+            }, 100);
         });
 
         // boxes

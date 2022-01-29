@@ -159,10 +159,64 @@ body {
 
 .menu-content .menu-button.purchase {
     background-color: #FF0000 !important;
-    /* box-shadow: */
     box-shadow: 0 10px 20px -10px #FF0000;
     transform: scale(1.5);
     color: #FFF;
+}
+
+.widget {
+    display: inline-block;
+    height: 50vmin;
+    width: 50vmin;
+    background-color: #141416;
+    border-radius: 5vmin;
+    margin: 7vmin;
+    background-size: 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    box-shadow: 0 0 0 0 #141416;
+    transition: box-shadow 500ms;
+}
+
+.widget:hover {
+    animation: rotateShake 150ms;
+    box-shadow: 0 0 0 5vmin #14141600;
+}
+
+.widget.nftrade {
+    background-image: url(/images/nft-trade.svg);
+}
+
+.widget.tofunft {
+    background-image: url(/images/tofunft.jpg);
+}
+
+.btn {
+    background-color: #1571fa;
+    color: #FFF;
+    border: none;
+    padding: 5px 12px;
+    border-radius: 3vmin;
+    font-family: 'Fira Code', sans-serif;
+    box-shadow: 0 0 0 0 #1571fa40;
+    transition: box-shadow 250ms;
+    cursor: pointer;
+}
+
+.btn:hover {
+    box-shadow: 0 0 0 1vmin #1571fa40;
+}
+
+.widget .btn {
+    padding: 2vmin 3vmin;
+    font-size: 3vmin;
+    position: absolute;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    width: 93%;
+    bottom: 2vmin;
 }
 
 .menu-content .splitter {
@@ -239,6 +293,13 @@ body {
     position: relative;
     font-family: 'Fira Code', sans-serif;
     text-align: center;
+    transition: all 500ms;
+}
+
+.section.hide {
+    height: 0;
+    display: none;
+    background-color: #000;
 }
 
 .section>.title,
@@ -266,6 +327,16 @@ body {
     cursor: pointer;
     font-size: 20px;
     display: none;
+}
+
+.section.mint {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(0deg, #141416 25%, #000000EE), url(/images/fire-crew.png);
+    background-size: cover, 50px;
+    background-position: 0, 0;
+    background-repeat: round;
 }
 
 .section.one {
@@ -515,5 +586,34 @@ body {
 
     .documents {
         font-size: 13px;
+    }
+
+    .section.mint {
+        /* display: block; */
+        /* flex-direction: column; */
+    }
+
+    .widget {
+        margin: 2vmin;
+        height: 45vmin;
+        width: 45vmin;
+    }
+}
+
+@keyframes rotateShake {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(1deg);
+    }
+
+    75% {
+        transform: rotate(-1deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
     }
 }
